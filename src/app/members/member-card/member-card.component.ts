@@ -2,11 +2,11 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { Member } from 'src/app/_models/member';
 
 @Component({
-  selector: 'app-memeber-card',
-  templateUrl: './memeber-card.component.html',
-  styleUrls: ['./memeber-card.component.css'],
+  selector: 'app-member-card',
+  templateUrl: './member-card.component.html',
+  styleUrls: ['./member-card.component.css'],
 })
-export class MemeberCardComponent implements OnInit {
+export class MemberCardComponent implements OnInit {
   @Input() member: Member | undefined;
 
   constructor() {}
