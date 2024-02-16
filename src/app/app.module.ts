@@ -35,7 +35,6 @@ import { DatePickerComponent } from './_forms/date-picker/date-picker.component'
     ListsComponent,
     MessagesComponent,
     MemberListComponent,
-    MemberDetailComponent,
     TestErrorComponent,
     NotFoundComponent,
     ServerErrorComponent,
