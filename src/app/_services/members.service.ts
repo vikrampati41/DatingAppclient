@@ -37,6 +37,10 @@ export class MembersService {
     });
   }
 
+  resetMemberCache() {
+    this.memeberCache.clear();
+  }
+
   getUserParams() {
     return this.userParams;
   }
@@ -98,6 +102,18 @@ export class MembersService {
 
   deletePhoto(photoId: number) {
     return this.http.delete(this.baseUrl + '/users/delete-photo/' + photoId);
+  }
+
+  addLike(userName: string) {
+    return this.http.post(this.baseUrl + '/likes/' + userName, {});
+  }
+
+  getLikes(predicates: string, pageNumber: number, pageSize: number) {
+    let params = this.getPaginationHeader(pageNumber, pageSize);
+    params = params.append('predicate', predicates);
+
+    return this.getPaginationResult<Member[]>(this.baseUrl + '/likes', params);
+    // this.http.get<Member[]>(this.baseUrl + '/likes/' + predicates);
   }
 
   private getPaginationResult<T>(url: string, params: HttpParams) {
